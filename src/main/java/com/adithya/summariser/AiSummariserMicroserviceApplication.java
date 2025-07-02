@@ -1,4 +1,4 @@
-package com.adithya.ai_summariser_microservice;
+package com.adithya.summariser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -9,16 +9,18 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/summarise")
 public class PromptController {
 
+    //prompt given by user
     @PostMapping("/text")
     public ResponseEntity<String> summariseText(@RequestBody PromptRequest request) {
         String summary = "Summary generated for the prompt : " + request.getPrompt();
         return ResponseEntity.ok(summary);
     }
 
+    //prompt preset
     @PostMapping("/default")
     public ResponseEntity<String> summariseDefault() {
-        String precodedPrompt = "Summarise it to 2 lines";
-        String summary = "Summary generated for precoded prompt";
+        String presetPrompt = "Summarise it to 2 lines";
+        String summary = "Summary generated for preset prompt";
         return ResponseEntity.ok(summary);
     }
 

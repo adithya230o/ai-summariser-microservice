@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AiSummariserMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AiSummariserMicroserviceApplication.class, args);
+		SpringApplication.run( AiSummariserMicroserviceApplication.class , args );
 	}
 
 }

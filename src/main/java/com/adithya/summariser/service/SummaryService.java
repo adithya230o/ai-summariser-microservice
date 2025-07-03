@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SummaryService {
-    private final OpenAIHelper openAIHelper;
+    private final OpenAIClient openAIClient;
 
-    public SummaryService(OpenAIHelper openAIHelper) {
-        this.openAIHelper = openAIHelper;
+    public SummaryService(OpenAIClient openAIClient) {
+        this.openAIClient = openAIClient;
     }
 
     public String summarize(String inputText) {
-        return openAIHelper.send(inputText);
+        return openAIClient.send(inputText);
     }
 }

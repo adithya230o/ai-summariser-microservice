@@ -26,7 +26,7 @@ public class PromptController {
     //prompt preset
     @PostMapping("/default")
     public ResponseEntity<String> summariseDefault() {
-        String presetPrompt = "Summarise it to 2 lines";
+        String presetPrompt = "Give an apt heading for this line : 'The Industrial Revolution was a period of major technological advancement, primarily in the late 18th and 19th centuries, that transformed agrarian and handicraft economies into ones dominated by industry and machine manufacturing. '";
         String summary = summaryService.summarize(presetPrompt);
         return ResponseEntity.ok(summary);
     }

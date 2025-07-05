@@ -1,4 +1,4 @@
-package com.adithya.summariser.client;
+package com.adithya.aicore.client;
 
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Value;
@@ -6,6 +6,10 @@ import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
+
+/**
+ * Generic AI client to communicate with Gemini 2.0 Flash using REST API.
+ */
 
 @Component
 public class AIClient {
@@ -18,11 +22,11 @@ public class AIClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public String send(String userInput){
+    public String send(String inputPrompt){
 
         String fullUrl = url + "?key=" + apiKey;
 
-        String prompt = "Summarize the following text:\n" + userInput;
+        String prompt = inputPrompt;
 
         // Build JSON request body
         Map<String, Object> textMap = Map.of("text", prompt);

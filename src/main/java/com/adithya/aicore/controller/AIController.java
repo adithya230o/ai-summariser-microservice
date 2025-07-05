@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Controller for handling user-defined and preset AI prompts via Gemini.
+ * REST Controller for handling user-defined and preset AI prompts via Gemini.
  */
 
 @RestController
@@ -20,14 +20,24 @@ public class AIController {
         this.aiService = aiService;
     }
 
-    //prompt given by user
+
+    /**
+     * Handles a user-specified prompt.
+     * @param request PromptRequest containing the natural language prompt
+     * @return ResponseEntity with AI-generated output
+     */
     @PostMapping
     public ResponseEntity<String> postPrompt(@RequestBody PromptRequest request) {
         String summary = aiService.handlePrompt(request.getPrompt());
         return ResponseEntity.ok(summary);
     }
 
-    //prompt preset
+
+
+    /**
+     * Handles a hardcoded preset prompt.
+     * @return ResponseEntity with AI-generated response to the preset prompt
+     */
     @PostMapping("/preset")
     public ResponseEntity<String> postPresetPrompt() {
         String presetPrompt = "Give 2-3 lines about java.";
@@ -36,4 +46,13 @@ public class AIController {
         return ResponseEntity.ok(promptResponse);
     }
 
+
+    /**
+     * Simulates a backend load test by generating a mock request without calling the external AI API
+     * @return ResponseEntity with a static mock message
+     */
+    @PostMapping("/load-test")
+    public ResponseEntity<String> handleLoadTest() {
+        return ResponseEntity.ok(aiService.getMockResponse());
+    }
 }

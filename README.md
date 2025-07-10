@@ -1,23 +1,49 @@
-# AI Summariser Microservice
+# AI Core Microservice (Archived)
 
-This is an in-progress microservice project built with Spring Boot, intended to support summarisation of text-based input via simple REST APIs.
+> **Status:** Archived
+> This project represents a foundational experiment in integrating AI capabilities into Spring Boot applications using Gemini 2.0 Flash.
 
-## Project Goal
+---
 
-The microservice aims to handle both user-provided text and internally-triggered prompts, and return summaries. The service is being designed to function as a modular backend component that can be integrated into larger applications.
+## Overview
 
-## Planned Features
+This microservice accepts AI prompts (custom or preset) via REST endpoints and returns generated responses from the Gemini API. It is designed as a **pluggable backend service** to support broader AI use cases within Spring-based ecosystems.
 
-- API endpoint to accept raw text input and return a summarised output
-- Trigger-based summarisation from backend logic (no user input)
-- Ready for integration with external systems
-  
-## Tech Stack
+---
 
-- Java 17  
-- Spring Boot  
-- REST APIs
+## Features
 
-## Current Status
+-  Generic `/prompt` endpoint for dynamic prompt handling  
+-  Preset endpoint for fixed, reusable AI queries  
+-  Load test endpoint for high-concurrency testing (mocked mode)  
+-  Modular client-service-controller architecture for extensibility  
+-  API key managed via environment-safe configuration
 
-The project is under active development.
+---
+
+##  Tech Stack
+
+- **Spring Boot 3.5**
+- **Java 17+**
+- **Gemini 2.0 Flash** (via REST API)
+- **Postman** (for load and functional testing)
+
+---
+
+## Why Archived?
+
+> After initial development and testing, it was clear that the service:
+>
+> - Offered **limited unique value** beyond direct Gemini API calls  
+> - Required **more specific business logic** to be impactful  
+> - Was better used as a **learning milestone** than a deployable product  
+
+---
+
+## Lessons Learned
+
+- Not all API integrations justify a microservice on their own  
+- Microservices need a **distinct business purpose** or workflow to be defensible  
+- Load testing, modularity, and abstraction are valuable—but need application context
+
+---
